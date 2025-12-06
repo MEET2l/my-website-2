@@ -1,215 +1,585 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpacECE Genesis | SpaceECE India Foundation</title>
-
-    <style>
-    /* Global */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Upgrade Your School — 21st Century School Transformation</title>
+  <meta name="description" content="Upgrade your school: classroom transformation, teacher training, modern curriculum, branding & parent communication. Book a free consultation." />
+  <link href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style1.css">
+<style>
+  
+    :root{
+      --primary:#e94878;
+      --accent:#22a39f;
+      --muted:#6b7280;
+      --bg:#f9fafb;
+      --card:#ffffff;
+      --max-width:1200px;
+      --radius:12px;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-
-    body {
-        background: #fff;
-        color: #333;
-        line-height: 1.6;
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.45}
+    header{background:#fff;border-bottom:1px solid #eef2f6}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none;
     }
-
-    /* Title Section */
-    .Title {
-        background: #ff9e00;
-        padding: 120px 8% 100px;
-        text-align: center;
-        color: white;
+    .btn-primary{background:#ffb300;color:#fff;box-shadow:0 6px 18px rgba(233,72,120,0.18)}
+    .btn-ghost{background:transparent;color:var(--muted);border:1px solid transparent}
+    /* HERO */
+    .hero{background:linear-gradient(180deg, #ddced1 0%, #fdcc59 100%);border-radius:0 0 32px 32px;padding:40px 0 56px}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:26px;align-items:center}
+    .eyebrow{display:inline-block;background:#fff;padding:6px 10px;border-radius:999px;font-weight:600;color:var(--muted);font-size:13px}
+    h1{font-size:clamp(28px,6vw,46px);margin:12px 0 8px;line-height:1.02;color:#08101b}
+    p.lead{color:var(--muted);font-size:16px;max-width:680px}
+    .hero-ctas{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .hero-visual{display:flex;justify-content:center}
+    .card-visual{width:360px;height:260px;border-radius:16px;background:#fff;box-shadow:0 12px 30px rgba(15,17,26,0.06);overflow:hidden;display:flex;flex-direction:column}
+    .card-visual img{width:100%;height:100%;object-fit:cover}
+    /* FEATURES */
+    .features{display:grid;grid-template-columns:repeat(1,1fr);gap:18px;margin-top:28px}
+    .feature-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(9,30,40,0.04);display:flex;gap:14px;align-items:flex-start}
+    .feature-icon{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#fff,#f7fafc);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--primary)}
+    .feature-body h3{margin:0 0 6px;font-size:18px}
+    .feature-body p{margin:0;color:var(--muted);font-size:14px}
+    /* PROCESS */
+    .process{display:grid;grid-template-columns:1fr;gap:16px;margin-top:26px}
+    .steps{display:flex;gap:12px;flex-wrap:wrap}
+    .step{flex:1;min-width:180px;background:var(--card);padding:16px;border-radius:12px;text-align:left;box-shadow:0 6px 18px rgba(9,30,40,0.04)}
+    .step .num{background:#fff;border-radius:999px;padding:8px 12px;font-weight:700;color:var(--primary);display:inline-block;margin-bottom:10px}
+    /* BENEFITS & CASES */
+    .grid-2{display:grid;grid-template-columns:1fr;gap:18px;margin-top:28px}
+    .benefits-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .benefit{background:#fff;padding:12px;border-radius:10px;display:flex;gap:12px;align-items:center}
+    .stat{font-size:28px;font-weight:800;color:var(--primary)}
+    /* CTA BAR */
+    .cta-bar{background:#fff;border-radius:14px;padding:18px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 6px 36px rgba(2,6,23,0.04);margin-top:28px}
+    /* FAQ */
+    .faq{margin-top:26px}
+    .faq-item{background:#fff;border-radius:12px;padding:14px;margin-bottom:10px;box-shadow:0 6px 18px rgba(9,30,40,0.03)}
+    footer{margin-top:36px;padding:26px 0;color:var(--muted);text-align:center}
+    /* Responsive */
+    @media(min-width:900px){
+      .hero-grid{grid-template-columns:1fr 460px;gap:40px}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .grid-2{grid-template-columns:640px 1fr}
     }
-
-    .Title h1 {
-        font-size: 60px;
-        font-weight: 700;
+    @media(min-width:1200px){
+      .features{grid-template-columns:repeat(3,1fr)}
     }
-
-    .Title::after {
-        content: "";
-        width: 160px;
-        height: 6px;
-        background: white;
-        display: block;
-        margin: 18px auto 0;
-        border-radius: 10px;
-    }
-
-    /* Content Wrapper */
-    .content-section {
-        padding: 80px 10%;
-    }
-
-    /* Main Block */
-    .main-block {
-        width: 90%;
-        margin: 50px auto;
-        background: #fabffe;
-        border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 6px 25px rgba(0,0,0,0.12);
-    }
-
-    .main-image img {
-        width: 100%;
-        border-radius: 20px;
-        object-fit: cover;
-    }
-
-    /* Block Styling */
-    .block {
-        padding: 25px;
-        border-radius: 18px;
-        margin-bottom: 25px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        font-size: 17px;
-    }
-
-    .block h3 {
-        font-size: 22px;
-        margin-bottom: 10px;
-        font-weight: 600;
-    }
-
-    /* Background Colors */
-    .block1 { background: #FFF3E0; }
-    .block2 { background: #E3F2FD; }
-    .block3 { background: #E8F5E9; }
-    .block4 { background: #F3E5F5; }
-    .block5 { background: #FFF8E1; }
-    .block6 { background: #FBE9E7; }
-
-    /* ================= Responsive Design ================= */
-
-    /* Tablets */
-    @media (max-width: 992px) {
-        .Title h1 { font-size: 48px; }
-
-        .content-section {
-            padding: 60px 6%;
-        }
-
-        .block {
-            padding: 22px;
-            font-size: 16px;
-        }
-    }
-
-    /* Mobile Devices */
-    @media (max-width: 768px) {
-        .Title {
-            padding: 90px 5% 60px;
-        }
-
-        .Title h1 {
-            font-size: 36px;
-        }
-
-        .Title::after {
-            width: 120px;
-            height: 5px;
-        }
-
-        .content-section {
-            padding: 40px 4%;
-        }
-
-        .main-block {
-            width: 100%;
-            padding: 20px;
-        }
-
-        .block {
-            padding: 20px;
-        }
-
-        .block h3 {
-            font-size: 20px;
-        }
-    }
-
-    /* Very Small Screens */
-    @media (max-width: 480px) {
-        .Title h1 {
-            font-size: 30px;
-        }
-
-        .block h3 {
-            font-size: 19px;
-        }
-
-        .block {
-            padding: 18px;
-            font-size: 15px;
-        }
-    }
-    </style>
+</style>
 </head>
-
 <body>
 
-<!-- Title -->
-<div class="Title">
-    <h1>SpacECE Genesis</h1>
-</div>
+<section>
+    <div class="top-bar">
+        Call us @ +91 1800 4120 1580
+    </div>
+</section>
 
-<!-- CONTENT -->
-<section class="content-section">
-    <div class="content">
+<!----------------------------------------------- navbar ----------------------------------------------->
+<section>
+  <div class="container">
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Spacece Logo">
+        </div>
 
-        <!-- Main Image Block -->
-        <div class="main-block">
-            <div class="main-image">
-                <img src="about-us/image/SpacECE Genesis.png" alt="">
+        <ul class="nav-links">
+            <li><a href="index.php">Home</a></li>
+
+            <!-- Programs -->
+            <li class="dropdown">
+                <a href="#">Programs ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="Starat_your_School.html">Start Your School</a></li>
+                    <li><a href="Upgrade_your_school.html">Upgrade Your School</a></li>
+                    <li><a href="#">Parents Toddler Program</a></li>
+                </ul>
+            </li>
+
+            <!-- PTTC -->
+            <li><a href="PTTC.html">PTTC</a></li>
+
+            <!-- Admission -->
+            <li class="dropdown">
+                <a href="Aboutus.html">Admission ▾</a>
+            </li>
+
+            <!-- About Us -->
+            <li><a href="Aboutus.html">About Us</a></li>
+
+            <!-- Contact Us -->
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+
+        <!-- Enquire Button -->
+        <a class="enquire-btn" href="javascript:void(0)" onclick="openPopup()">Enquire Now</a>
+
+        <!-- POPUP OVERLAY -->
+        <div class="popup-overlay" id="popup">
+            <div class="popup-box">
+
+                <!-- Close Button -->
+                <button class="close-popup" onclick="closePopup()">×</button>
+
+                <!-- ZOHO FORM STARTS HERE -->
+                <form action="https://forms.zohopublic.com/kidoenterprises/form/KreedoWebsiteContactUsForm/formperma/UxHWZ_P2f6BEfg5Q5jJFP8txtfC_XkHyoDowK3rbSIA/htmlRecords/submit"
+                    name="form" method="POST" id="form" accept-charset="UTF-8" class="enquire_form">
+
+
+                    <h2>Please fill out the form below and we will respond within 24hrs</h2>
+
+                    <!-- Hidden UTM Fields -->
+                    <input type="hidden" name="zf_referrer_name">
+                    <input type="hidden" name="zf_redirect_url">
+                    <input type="hidden" name="zc_gad">
+                    <input type="hidden" name="utm_source" id="utm_source">
+                    <input type="hidden" name="utm_medium" id="utm_medium">
+                    <input type="hidden" name="utm_campaign" id="utm_campaign">
+                    <input type="hidden" name="utm_device" id="utm_device">
+                    <input type="hidden" name="utm_Adgroup" id="utm_Adgroup">
+                    <input type="hidden" name="gclid" id="gclid">
+                    <input type="hidden" name="referrername" id="referrername">
+
+                    <!-- Inputs -->
+                    <input type="text" name="SingleLine" placeholder="Enter your name" required>
+                    <input type="email" name="Email" placeholder="Enter Your Email" required>
+                    <input type="text" name="PhoneNumber_countrycode" pattern="[0-9]{10}" placeholder="Number" required>
+
+                    <select name="Dropdown" required>
+                        <option value="">Select State</option>
+                        <option>Maharashtra</option>
+                        <option>Gujarat</option>
+                    </select>
+
+                    <select name="Dropdown1" required>
+                        <option value="">Category</option>
+                        <option value="Individual">Starting a new school</option>
+                        <option value="K-12 School">Upgrading my school</option>
+                        <option value="Teacher">Interested in Teacher Training Course</option>
+                    </select>
+
+                    <textarea name="MultiLine" placeholder="Message"></textarea>
+
+                    <!-- Captcha -->
+                    <span id="captchaText">IqOmSl</span>
+                    <input type="text" placeholder="Enter the above text" required>
+
+                    <!-- Checkbox -->
+                    <label class="check-label">
+                        <input type="checkbox" checked>
+                        Please contact me via WhatsApp, SMS, Phone, and Email
+                    </label>
+
+                    <!-- Submit -->
+                    <button class="zf-submitColor">Submit</button>
+                </form>
+                <!-- 🔥 ZOHO FORM ENDS HERE -->
             </div>
         </div>
 
-        <!-- BLOCK 1 -->
-        <div class="block block1">
-            <h3 style="color:#94b1fc">Identifying the Need</h3>
-            <p>The genesis of SpacECE India Foundation can be traced back to the recognition of a critical need in the education sector while working in the urban slums through Samidha, a trust established in 2007. We witnessed the educational disparities faced by children from underprivileged locations, where access to quality education and holistic development opportunities were limited. This realization ignited a deep passion within us to bridge the gap and create meaningful change in the lives of these children.</p>
-        </div>
 
-        <!-- BLOCK 2 -->
-        <div class="block block2">
-            <h3 style="color:#ff9e00">Founding Principles</h3>
-            <p>Built on the strong foundation of equity, inclusion, and empowerment, SpacECE India Foundation was established with the core belief that every child deserves equal access to quality education and holistic development. We firmly believe in the transformative power of education and its ability to break the cycle of poverty, enabling children to reach their full potential and contribute positively to society.</p>
-        </div>
+        <!-- Mobile Menu Icon -->
+        <button class="menu-btn" onclick="openMenu()">☰</button>
+    </nav>
 
-        <!-- BLOCK 3 -->
-        <div class="block block3">
-            <h3 style="color:#94b1fc">Collaborative Approach</h3>
-            <p>From its inception, SpacECE India Foundation has embraced a collaborative approach to address the complex challenges faced by underprivileged children. We recognized that no single entity can create sustainable impact on its own. As a result, we have forged partnerships with like-minded individuals, organizations, and stakeholders, pooling our collective resources, knowledge, and expertise to create a greater and more sustainable impact.</p>
-        </div>
+    <!-- BLACK OVERLAY -->
+    <div class="overlay" onclick="closeMenu()"></div>
 
-        <!-- BLOCK 4 -->
-        <div class="block block4">
-            <h3 style="color:#ff9e00">Holistic Development Focus</h3>
-            <p>Understanding that education extends beyond the classroom, we place a strong emphasis on holistic development. We believe that a child's overall well-being, encompassing physical, cognitive, social, and emotional aspects, is crucial for their growth and future success. Our programs and initiatives are designed to provide a nurturing and inclusive environment that fosters holistic development, empowering children to become confident, compassionate, and resilient individuals.</p>
-        </div>
-
-        <!-- BLOCK 5 -->
-        <div class="block block5">
-            <h3 style="color:#94b1fc">Innovation and Adaptation</h3>
-            <p>SpacECE India Foundation is committed to staying at the forefront of educational innovation and adaptability. We understand that the needs of children and the education landscape are continuously evolving. To address these changes, we foster a culture of innovation, embracing technology, research, and evidence-based practices to develop effective and sustainable solutions. We continuously adapt our strategies, ensuring relevance and maximizing our impact.</p>
-        </div>
-
-        <!-- BLOCK 6 -->
-        <div class="block block6">
-            <h3 style="color:#ff9e00">Growth and Impact</h3>
-            <p>Since our inception, SpacECE India Foundation has grown steadily, expanding our reach and impact across underprivileged communities. We have witnessed the transformative power of education firsthand, with countless success stories of children who have overcome challenges and achieved their dreams. These stories fuel our determination and motivate us to continue expanding our efforts to reach more children and create a lasting impact.</p>
-        </div>
-
-    </div>
+    <!-- SIDEBAR -->
+    <nav class="menu">
+        <button class="close-btn" onclick="closeMenu()">×</button>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+  </div>
 </section>
+
+  <!-- HERO -->
+  <section class="hero hero-info" aria-labelledby="hero-heading">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">School Upgrade</span>
+        <h1 id="hero-heading">Upgrade Your School for 21st-Century Learning Excellence</h1>
+        <p class="lead">
+          Transform classrooms, empower teachers, modernize curriculum, and improve learning outcomes with our complete school upgrade program. Increase admissions, improve parent satisfaction, and build a modern learning environment.
+        </p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Get Free Consultation</a>
+          <a href="#brochure" class="btn btn-ghost"><i class="fa-solid fa-download"></i> Download Brochure</a>
+        </div>
+
+        <!-- Key points -->
+        <div style="display:flex;gap:14px;margin-top:20px;flex-wrap:wrap">
+          <div style="background:#fff;padding:10px 14px;border-radius:10px;display:flex;gap:10px;align-items:center;box-shadow:0 6px 18px rgba(9,30,40,0.04)">
+            <i class="fa-solid fa-chalkboard-user" style="color:var(--accent)"></i>
+            <div>
+              <div style="font-weight:700">Modern Classrooms</div>
+              <div style="font-size:13px;color:var(--muted)">Activity-based setups</div>
+            </div>
+          </div>
+          <div style="background:#fff;padding:10px 14px;border-radius:10px;display:flex;gap:10px;align-items:center;box-shadow:0 6px 18px rgba(9,30,40,0.04)">
+            <i class="fa-solid fa-user-tie" style="color:var(--primary)"></i>
+            <div>
+              <div style="font-weight:700">Teacher Training</div>
+              <div style="font-size:13px;color:var(--muted)">Certification & PTTC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <!-- Replace with real image: assets/hero-classroom.jpg -->
+        <div class="card-visual" role="img" aria-label="Children engaged in classroom activities">
+          <img src="./assets/hero.jpg" alt="Classroom transformation" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- WHY -->
+    <section aria-labelledby="why-heading" style="margin-top:26px">
+      <h2 id="why-heading">Why Upgrading Your School Matters</h2>
+      <p style="color:var(--muted);max-width:820px">Parents and communities expect schools to offer modern pedagogy, safe and stimulating environments, transparent communication, and measurable learning outcomes. Our upgrade program ensures your school meets these demands while driving growth and reputation.</p>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" aria-label="What we upgrade">
+      <article class="feature-card" aria-labelledby="f1">
+        <div class="feature-icon"><i class="fa-solid fa-chalkboard"></i></div>
+        <div class="feature-body">
+          <h3 id="f1">Modern Classroom Upgrade</h3>
+          <p>Activity-based setup, Montessori corners, safe child-friendly furniture, visual learning zones and digital learning corners that spark curiosity.</p>
+        </div>
+      </article>
+
+      <article class="feature-card" aria-labelledby="f2">
+        <div class="feature-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="feature-body">
+          <h3 id="f2">Teacher Training & Certification (PTTC)</h3>
+          <p>21-day structured training, classroom management, lesson planning, and continuous professional development with certification and performance tracking.</p>
+        </div>
+      </article>
+
+      <article class="feature-card" aria-labelledby="f3">
+        <div class="feature-icon"><i class="fa-solid fa-book-open"></i></div>
+        <div class="feature-body">
+          <h3 id="f3">Curriculum Modernization</h3>
+          <p>Skill-based lesson plans, weekly planners, assessments and child-centered activities for measurable learning progress.</p>
+        </div>
+      </article>
+
+      <article class="feature-card" aria-labelledby="f4">
+        <div class="feature-icon"><i class="fa-solid fa-tag"></i></div>
+        <div class="feature-body">
+          <h3 id="f4">Branding & Admissions Support</h3>
+          <p>Logo & brand kit, website setup, social media starter pack and admission campaigns to increase visibility and enrolment.</p>
+        </div>
+      </article>
+
+      <article class="feature-card" aria-labelledby="f5">
+        <div class="feature-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <div class="feature-body">
+          <h3 id="f5">Parent Communication Tools</h3>
+          <p>Digital progress reports, parent app integration, monthly updates and transparent communication for stronger parent-school partnerships.</p>
+        </div>
+      </article>
+
+      <article class="feature-card" aria-labelledby="f6">
+        <div class="feature-icon"><i class="fa-solid fa-hands-holding-circle"></i></div>
+        <div class="feature-body">
+          <h3 id="f6">Ongoing Support & Monitoring</h3>
+          <p>Monthly visits, teacher evaluations, classroom support and data-driven performance reports to ensure sustained improvement.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" aria-labelledby="process-heading">
+      <h2 id="process-heading">Our Step-by-Step Upgrade Process</h2>
+      <p style="color:var(--muted)">A simple, proven implementation model designed to minimize disruption and deliver measurable results.</p>
+
+      <div class="steps" role="list">
+        <div class="step" role="listitem">
+          <div class="num">1</div>
+          <h4 style="margin:6px 0 4px">School Audit</h4>
+          <p style="color:var(--muted);margin:0">Comprehensive assessment of classrooms, teaching, curriculum and facilities.</p>
+        </div>
+
+        <div class="step" role="listitem">
+          <div class="num">2</div>
+          <h4 style="margin:6px 0 4px">Customized Plan</h4>
+          <p style="color:var(--muted);margin:0">Tailored upgrade roadmap with timelines and investment estimates.</p>
+        </div>
+
+        <div class="step" role="listitem">
+          <div class="num">3</div>
+          <h4 style="margin:6px 0 4px">Implementation</h4>
+          <p style="color:var(--muted);margin:0">On-ground classroom setup, teacher training, and branding activities.</p>
+        </div>
+
+        <div class="step" role="listitem">
+          <div class="num">4</div>
+          <h4 style="margin:6px 0 4px">Monitor & Improve</h4>
+          <p style="color:var(--muted);margin:0">Regular monitoring, feedback loops and performance reports across the year.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS & STATS -->
+    <section class="grid-2" aria-labelledby="benefits-heading">
+      <div>
+        <h2 id="benefits-heading">What Your School Gains</h2>
+        <ul style="color:var(--muted);line-height:1.7">
+          <li>Improved student learning outcomes and measurable progress.</li>
+          <li>Teacher confidence and classroom management skills.</li>
+          <li>Attractive, activity-based classrooms boosting student engagement.</li>
+          <li>Higher parent satisfaction and stronger community trust.</li>
+          <li>Professional school brand and increased admissions.</li>
+        </ul>
+
+        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+          <div style="background:#fff;padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(9,30,40,0.04);min-width:120px;text-align:center">
+            <div class="stat">40%</div>
+            <div style="font-size:13px;color:var(--muted)">Admissions Growth</div>
+          </div>
+          <div style="background:#fff;padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(9,30,40,0.04);min-width:120px;text-align:center">
+            <div class="stat">65%</div>
+            <div style="font-size:13px;color:var(--muted)">Learning Improvement</div>
+          </div>
+          <div style="background:#fff;padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(9,30,40,0.04);min-width:120px;text-align:center">
+            <div class="stat">90%</div>
+            <div style="font-size:13px;color:var(--muted)">Parent Satisfaction</div>
+          </div>
+        </div>
+      </div>
+
+      <aside style="display:flex;flex-direction:column;gap:12px">
+        <!-- Replace with real image: assets/case-study.jpg -->
+        <div style="background:#fff;border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(9,30,40,0.04)">
+          <img src="https://via.placeholder.com/520x320?text=Before+%26+After" alt="Before and after classroom" style="width:100%;border-radius:8px;display:block" />
+        </div>
+
+        <div style="background:#fff;border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(9,30,40,0.04)">
+          <h4 style="margin:6px 0">Success Snapshot</h4>
+          <p style="color:var(--muted);margin:0">A recent partner school saw a 40% rise in admissions and a 65% increase in assessed learning outcomes within the first year after upgrade.</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- CTA BAR -->
+    <section class="cta-bar" aria-labelledby="contact">
+      <div>
+        <h3 id="contact" style="margin:0">Ready to Upgrade Your School?</h3>
+        <p style="margin:4px 0;color:var(--muted)">Book a free consultation and get a customized upgrade plan for your school.</p>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a href="#contact-form" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Free Consultation</a>
+        <a href="#brochure" class="btn btn-ghost"><i class="fa-solid fa-file-lines"></i> Download Brochure</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <strong>How long does an upgrade take?</strong>
+        <p style="margin:6px 0;color:var(--muted)">Typical upgrades vary by scope — simple classroom upgrades with training take 4–8 weeks; full school transformations are planned over 3–6 months with ongoing support.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>What is the investment?</strong>
+        <p style="margin:6px 0;color:var(--muted)">Costs depend on scope (classroom materials, teacher training, branding). We provide a tailored estimate after the initial audit.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Do you provide teacher certification?</strong>
+        <p style="margin:6px 0;color:var(--muted)">Yes — our PTTC-aligned training includes certification and performance reports.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>What support do you provide after implementation?</strong>
+        <p style="margin:6px 0;color:var(--muted)">Monthly monitoring, teacher coaching, and quarterly performance reports for the academic year.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT / FORM -->
+    <section id="contact-form" style="margin-top:26px;">
+      <h2>Get in Touch</h2>
+      <p style="color:var(--muted)">Fill in details and our upgrade expert will contact you within 24–48 hours.</p>
+
+      <form style="display:grid;gap:12px;max-width:760px;background:#fff;padding:16px;border-radius:12px;box-shadow:0 6px 24px rgba(9,30,40,0.04)">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <input type="text" name="name" placeholder="Your name" style="padding:12px;border-radius:8px;border:1px solid #e6eef2" required>
+          <input type="email" name="email" placeholder="Email address" style="padding:12px;border-radius:8px;border:1px solid #e6eef2" required>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <input type="text" name="school" placeholder="School name" style="padding:12px;border-radius:8px;border:1px solid #e6eef2">
+          <input type="tel" name="phone" placeholder="Phone number" style="padding:12px;border-radius:8px;border:1px solid #e6eef2">
+        </div>
+        <textarea name="message" placeholder="Briefly describe what you want to upgrade (classrooms, training, branding...)" rows="4" style="padding:12px;border-radius:8px;border:1px solid #e6eef2"></textarea>
+        <div style="display:flex;gap:10px;align-items:center;justify-content:flex-end">
+          <button type="submit" class="btn btn-primary">Submit & Request Consultation</button>
+          <a href="#brochure" class="btn btn-ghost">Download Brochure</a>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <div style="max-width:900px;margin:18px auto 0;color:var(--muted)">
+        © <strong>Your Organization</strong> — School Upgrade Program • Designed for modern learning. <br/>
+        Image suggestions: hero-classroom.jpg, before-after.jpg, teacher-training.jpg, parent-dashboard.jpg, branding-mockup.jpg
+      </div>
+    </footer>
+  </main>
+
+  <!-- Notes for developers (not visible on page) -->
+  <!--
+    Implementation notes:
+     • Replace all placeholder images with high-quality images (hero-classroom.jpg etc.)
+     • Use CMS to populate success stories and FAQ dynamically.
+     • Consider lazy-loading images: <img loading="lazy" ...>
+     • Add analytics + conversion tracking for CTA buttons.
+     • For icon set variations consider using inline SVGs for best performance.
+  -->
+
+<!----------------------------------------------- footer ----------------------------------------------->
+<footer class="footer">
+    <div class="container">
+      <div class="footer-info">
+        <!-- Column 1: Logo + Social -->
+        <div class="footer-section">
+            <img src="assets/logo.png" class="footer-logo" alt="Preschool Logo">
+
+            <p class="footer-text">
+                Building bright futures with joyful learning.
+            </p>
+
+            <!-- Google Map -->
+            <div class="footer-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.713390921391!2d73.80806407371841!3d18.45131787128889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc29513dc000001%3A0x6bcacb06efbe645c!2sSpacECE%20INDIA%20FOUNDATION!5e0!3m2!1sen!2sin!4v1764842317194!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+
+
+        <!-- Column 2: Contact Form (Parents Admission Inquiry) -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+
+            <form class="footer-form">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <input type="text" placeholder="Your Phone">
+                <select>
+                    <option>Select Program</option>
+                    <option>Playgroup</option>
+                    <option>Nursery</option>
+                    <option>Jr. KG</option>
+                    <option>Sr. KG</option>
+                </select>
+                <textarea placeholder="Message"></textarea>
+                <button type="submit" class="footer-btn">Submit</button>
+            </form>
+        </div>
+
+        <!-- Column 3: Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <div class="link-wrap">
+              <ul class="footer-links">
+                <li><a href="#">About Preschool</a></li>
+                <li><a href="#">Our Programs</a></li>
+                <li><a href="#">Our Vision</a></li>
+              </ul>
+              <ul class="footer-links">
+                <li><a href="#">Parent Resources</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/SpacECE/"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.twitter.com/SpacECE/"><i class="fa-brands fa-twitter"></i></a>
+              <a href="https://www.instagram.com/SpacECE/"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.youtube.com/SpacECE/"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://www.Whatsapp.com/SpacECE/"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <hr>
+    <!-- Bottom -->
+    <div class="footer-bottom">
+        © 2025 Your Preschool Name — All Rights Reserved
+    </div>
+</footer>
+
+
+
+
+<!--------------- Dropdown button  ---------------->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdown = document.querySelector(".dropdown > a");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+
+    dropdown.addEventListener("click", function (e) {
+        e.preventDefault(); // link click disable
+        dropdownMenu.style.display =
+            dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (e) {
+        if (!dropdown.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.style.display = "none";
+        }
+    });
+});
+</script>
+
+<!--------------- menu button  ---------------->
+<script>
+    function openMenu() {
+        document.querySelector('.menu').style.right = '0px';
+        document.querySelector('.overlay').style.display = 'block';
+    }
+    function closeMenu() {
+        document.querySelector('.menu').style.right = '-250px';
+        document.querySelector('.overlay').style.display = 'none';
+    }
+</script>
+<!--------------- Equairy form popup-box  ---------------->
+<script>
+    function openPopup() {
+        document.getElementById("popup").style.display = "block";
+        document.body.classList.add("no-scroll");
+    }
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+        document.body.classList.remove("no-scroll");
+    }
+</script>
+<!--------------- footer   ---------------->
+<!-- <script>
+function goToThankYou(e) {
+    e.preventDefault();  // stop default action
+    window.location.href = "thankyou.php";  // your thank you page
+}
+</script> -->
+
 
 </body>
 </html>
